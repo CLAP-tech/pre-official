@@ -16,6 +16,10 @@
         margin: 10px;
         width:200px;
     }
+    div.checkbox {
+        diplay: inline-block;
+        margin: 10px;
+    }
 </style>
 <body>
     <div class="content">
@@ -23,12 +27,11 @@
     </div>
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
     <script src="../../bower_components/react/react.js"></script>
+    <script src="../../bower_components/react/JSXTransformer.js"></script>
     <script src="core.js"></script>
-    <script src="button.js"></script>
-    <script src="input.js"></script>
-    <script src="renderer.js"></script>
-    <script>
-        CLAP.UITestRender.render();
-    </script>
+    <script type="text/jsx" src="button.jsx"></script>
+    <script type="text/jsx" src="input.jsx"></script>
+    <script type="text/jsx" src="checkbox.jsx"></script>
+    <script type="text/jsx" src="renderer.jsx"></script>
 </body>
 </html>
