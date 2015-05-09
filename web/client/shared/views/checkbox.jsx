@@ -50,5 +50,20 @@ CLAP.SharedUI.Checkbox = React.createClass({
                 </label>
             </div>
         );
+
+        /**
+         * NOTE (Natural Lam):
+         * The JSX will be converted to the following JS:
+         *
+         * return (
+         *     React.createElement('div', { className: props.className },
+         *         React.createElement('label', null,
+         *             React.createElement('input', {type: 'checkbox'}, null),
+         *             props.labelText
+         *         )
+         *     )
+         * );
+         *
+         */
     }
 });
