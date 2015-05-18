@@ -13,11 +13,21 @@
     var Backbone = require('backbone');
     var $ = require('jquery');
 
+    var Users = require('../collections/users');
     var UserListRouter = require('../routers/router');
     var UserListView = require('../views/user_list_view.jsx');
     var EditUserView = require('../views/edit_user_view.jsx');
 
+    // The static utils class.
+    require('../utils/utils');
+
     module.exports = React.createClass({
+
+        /**
+         * The user collection for the app.
+         * @type Object
+         * */
+        _users: null,
 
         /**
          * The value of this will be set to this.state before the view is mounted.
@@ -29,13 +39,18 @@
             }
         },
 
-        componentDidMount: function () {
+        /**
+         * The method that being called before the first render is called, i.e. it's like an init method.
+         */
+        componentWillMount: function () {
             // Start the router when this main container view is mounted
             new UserListRouter({ simpleUserListApp: this });
             Backbone.history.start();
-            if (this.props.users) {
-                this.props.users.fetch();
+
+            if (!this._users) {
+                this._users = new Users();
             }
+            this._users.fetch();
         },
 
         render: function () {
@@ -44,7 +59,7 @@
             // 2. We should try the Flux architecture, I will do that in the next round.
             var editUserClickHandler = function (evt) {
                 var userDetails = $(evt.currentTarget).serializeObject();
-                var user = this.props.users.create(userDetails);
+                var user = this._users.create(userDetails);
                 user.save({
                     success: function (user) {
                         console.log("saved.");
@@ -57,13 +72,13 @@
             var page;
             switch (this.state.page) {
                 case 'showUser' :
-                    page = <UserListView collection={this.props.users}/>;
+                    page = <UserListView collection={this._users}/>;
                     break;
                 case 'editUser':
                     page = <EditUserView handler={editUserClickHandler.bind(this)} />;
                     break;
                 default:
-                    page = <UserListView collection={this.props.users}/>;
+                    page = <UserListView collection={this._users}/>;
                     break;
             }
             return (

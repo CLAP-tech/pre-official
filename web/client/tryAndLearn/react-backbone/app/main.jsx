@@ -8,17 +8,9 @@
 
     var React = require('react');
     var App = require('./app.jsx');
-    var Users = require('../collections/users');
-
-    // Create global users collection.
-    var users = new Users();
-
-    // Create the utils static class and create the singleton instance.
-    var Utils = require('../utils/utils');
-    var utils = Utils.getInstance();
 
     React.render(
-        <App users={users} utils={utils}/>,
+        <App />,
         document.getElementById('user-list-app')
     );
 })();

@@ -12,8 +12,9 @@
 
     var Utils = function () {
 
-        // Closure for adding function prototype for jQuery.
-        (function () {
+        // The following closures add more methods to the jQuery object, and will automatically
+        // executed when the Utils object is required.
+        (function additionPrototypeToJQuery() {
             $.fn.serializeObject = function() {
                 var o = {};
                 var a = this.serializeArray();
@@ -32,16 +33,9 @@
             };
         })();
 
+        // No other util method for now.
     };
 
-    Utils._instance = null;
+    module.exports = new Utils();
 
-    Utils.getInstance = function () {
-        if (!this._instance) {
-            this._instance = new Utils();
-        }
-        return this._instance;
-    };
-
-    module.exports = Utils;
 })();
