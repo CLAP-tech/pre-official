@@ -1,0 +1,24 @@
+{
+  "name": "clap",
+  "version": "0.0.1",
+  "homepage": "https://github.com/CLAP-tech/pre-official",
+  "authors": [
+    "Natural"
+  ],
+  "description": "pre-official code for clap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "backbone.localstorage": "~1.1.16",
+    "flux": "~2.0.2",
+    "backbone": "~1.1.2",
+    "react": "~0.13.1",
+    "react.backbone": "~0.6.0"
+  }
+}

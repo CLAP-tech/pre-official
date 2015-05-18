@@ -1,0 +1,2 @@
+Run `npm run dev` to start the webpack.
+For now I am sing the --watch option for auto rebuild updon code change, there's webpack-dev-server which host the site on localhost:8080 offer more features, will check that out later.

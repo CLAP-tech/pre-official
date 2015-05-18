@@ -1,0 +1,22 @@
+{
+  "name": "clap",
+  "version": "1.0.0",
+  "repository": "",
+  "description": "pre-official code for clap",
+  "dependencies": {
+    "css-loader": "^0.12.1",
+    "file-loader": "^0.8.1",
+    "imports-loader": "^0.6.3",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.0",
+    "webpack-dev-server": "^1.8.2",
+    "webpack": "^1.9.6",
+    "url-loader": "^0.5.5",
+    "style-loader": "^0.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Natural"
+}
