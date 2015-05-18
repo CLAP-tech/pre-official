@@ -17,11 +17,6 @@
     var UserListView = require('../views/user_list_view.jsx');
     var EditUserView = require('../views/edit_user_view.jsx');
 
-    // XXX: This is really hackish, I need to first include the util module, then execute it because it has
-    // defined additional prototype for $. Let's live with it right now, will think of a better way.
-    var utils = require('../utils/utils');
-    utils();
-
     module.exports = React.createClass({
 
         /**

@@ -10,24 +10,38 @@
 
     var $ = require('jquery');
 
-    module.exports = function () {
-        // Implement this jQuery util method.
+    var Utils = function () {
 
-        $.fn.serializeObject = function() {
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function() {
-                if (o[this.name] !== undefined) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
+        // Closure for adding function prototype for jQuery.
+        (function () {
+            $.fn.serializeObject = function() {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
                     }
-                    o[this.name].push(this.value || '');
-                }
-                else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        };
+                    else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+        })();
+
     };
+
+    Utils._instance = null;
+
+    Utils.getInstance = function () {
+        if (!this._instance) {
+            this._instance = new Utils();
+        }
+        return this._instance;
+    };
+
+    module.exports = Utils;
 })();
