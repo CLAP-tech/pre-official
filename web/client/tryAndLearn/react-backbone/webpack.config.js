@@ -8,6 +8,7 @@ var bower_dir = __dirname + '/../../bower_components';
 var config = {
     addVendor: function (name, path, noParse) {
         this.resolve.alias[name] = path;
+        this.entry.vendors.push(name);
         if (noParse) {
             // Some of the modules are already uglified, we don't need to parse them again.
             this.module.noParse.push(new RegExp(path));
@@ -16,15 +17,7 @@ var config = {
 
     entry: {
         app: ['./app/main.jsx' ],
-        vendors: [
-            'jquery',
-            'backbone',
-            'backbone.localStorage',
-            'react',
-            'react.backbone',
-            'underscore',
-            'bootstrap'
-        ]
+        vendors: []
     },
 
     resolve: { alias: {} },
@@ -46,7 +39,7 @@ var config = {
             // with the following, import-loader basically prepend var jQuery = require('jquery') to bootstrap.js module.
             { test: /bootstrap.js/, loader: "imports?jQuery=jquery" },
             { test: /\.css$/, loader: 'style-loader!css-loader'},
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=10000' }
         ]
     }
 };
