@@ -24,11 +24,11 @@
                     <hr />
                     <form className="edit-user-form" onSubmit={this.props.handler}>
                         <legend>Create User</legend>
-                        <label>First Name</label>
-                        <input type="text" name="firstName"/>
-                        <label>Last Name</label>
-                        <input type="text" name="lastName"/>
-                        <label>Age</label>
+                        <label>First Name</label>{'\n'}
+                        <input type="text" name="firstName"/>{'\n'}
+                        <label>Last Name</label>{'\n'}
+                        <input type="text" name="lastName"/>{'\n'}
+                        <label>Age</label>{'\n'}
                         <input type="text" name="age"/>
                         <hr />
                         <button type="submit" className="btn">Create</button>
