@@ -10,11 +10,11 @@
 
     var Backbone = require('backbone');
     var BackboneLocalStorage = require('backbone.localStorage');
-    var user = require('../models/user');
+    var User = require('../models/user');
 
     module.exports = Backbone.Collection.extend({
 
-        model: user,
+        model: User,
 
         // Save all of the users under the `"user-lists-react-backbone"` namespace.
         localStorage: new BackboneLocalStorage('user-lists-react-backbone')

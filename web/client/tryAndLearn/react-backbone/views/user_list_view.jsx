@@ -14,6 +14,12 @@ if (!(function () {
         var UserView = require('./user_view.jsx');
 
         module.exports = React.createBackboneClass({
+
+            /**
+             * @type string
+             */
+            displayName: 'UserListView',
+
             render: function () {
                 var usersList = this.getCollection().map(function (user) {
                     return <UserView key={user.id} model={user} />;

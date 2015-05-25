@@ -11,6 +11,12 @@
     var React = require('react.backbone');
 
     module.exports = React.createBackboneClass({
+
+        /**
+         * @type string
+         */
+        displayName: 'UserView',
+
         render: function () {
             var model = this.getModel();
             return (<tr>

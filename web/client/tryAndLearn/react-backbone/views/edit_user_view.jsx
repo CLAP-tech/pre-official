@@ -11,6 +11,12 @@
     var React = require('react');
 
     module.exports = React.createClass({
+
+        /**
+         * @type string
+         */
+        displayName: 'EditUserView',
+
         render: function () {
             return (
                 <div>

@@ -29,6 +29,12 @@
          * */
         _users: null,
 
+
+        /**
+         * @type string
+         */
+        displayName: 'AppContainerView',
+
         /**
          * The value of this will be set to this.state before the view is mounted.
          * @return Object
@@ -59,12 +65,7 @@
             // 2. We should try the Flux architecture, I will do that in the next round.
             var editUserClickHandler = function (evt) {
                 var userDetails = $(evt.currentTarget).serializeObject();
-                var user = this._users.create(userDetails);
-                user.save({
-                    success: function (user) {
-                        console.log("saved.");
-                    }
-                });
+                this._users.create(userDetails);
                 // tell browser to stop the default action
                 evt.stopPropagation();
             };
