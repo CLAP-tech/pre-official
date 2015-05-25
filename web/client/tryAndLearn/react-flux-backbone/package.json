@@ -1,0 +1,9 @@
+{
+  "name": "simple-user-lists",
+  "version": "0.0.1",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "author": "Natural"
+}
